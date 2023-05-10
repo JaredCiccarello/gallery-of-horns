@@ -1,5 +1,13 @@
 # Getting Started with Create React App
 
+Resources:
+Sheyna Watkins class video
+Keelan Fisher
+Daniel Quinn
+Ashley Taylor
+Anthony Sinitsa
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
