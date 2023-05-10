@@ -1,5 +1,42 @@
 # Getting Started with Create React App
 
+Number and name of feature: __________Feature #1: Display Images_____________
+
+Estimate of time needed to complete: 4 hours
+
+Start time: 1730
+
+Finish time: 2130
+
+Actual time needed to complete: 4 hours (This is not a joke, I only just completed it when my instructor walked in on me and helped me fix a 🐞  in my code)
+
+
+Number and name of feature: Feature #2: Allow Users to Favorite Individual Beasts
+
+Estimate of time needed to complete: 3 hours
+
+Start time: 0100
+
+Finish time: 
+
+Actual time needed to complete: 
+
+
+
+Number and name of feature: Feature 3: Bootstrap
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 1230
+
+Finish time: 0100
+
+Actual time needed to complete: 30 minutes
+
+
+
+
+
 Resources:
 Sheyna Watkins class video
 Keelan Fisher

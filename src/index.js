@@ -2,6 +2,8 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+// MUST import bootstrap CSS in order for bootstrap style. We put this infront of index.css because CSS will do the last thing we told it to do.
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
