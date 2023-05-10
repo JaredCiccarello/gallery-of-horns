@@ -1,3 +1,5 @@
+// index.js is not a class unlike App.js
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
