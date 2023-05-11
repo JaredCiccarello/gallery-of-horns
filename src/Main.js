@@ -1,31 +1,39 @@
 import React from 'react';
 import HornedBeastAnimal from './HornedBeast';
-import data from './data.json';
+import Row from 'react-bootstrap/Row';
 
 class Main extends React.Component {
 
 
   render() {
 
-  let HornedBeast = [];
+
   // We want each animal to be given a component in my HornedBeast array
   // Each item in the array will be called beasts
-  data.forEach((beasts) => {
+  // map acts as an array, pushing data through beasts, idx
+  let HornedBeast =  this.props.data.map((beasts, idx) => {
 
-    // Next we need to create an instance of our components out of each beasts and then push it onto the array
-    HornedBeast.push(
-      <HornedBeastAnimal
+      // key idx holds place
+      // Col md={4} key={idx}>
+
+
+    // We need return here because: the instance of 'HornedBeast' cannot return a value until we give it the command return
+      return ( <HornedBeastAnimal 
         image_url={beasts.image_url}
         title={beasts.title}
         description={beasts.description}
         // We add a key for the _id in data.json
-        key={beasts._id}
-      />)
+        key={idx}
+        addHearts={this.props.addHearts}
+      />);
   });
 
+
+
     return (
+      // we sent 'data' array using props into main
       <main>
-        {HornedBeast}
+        <Row xs={1} sm={2} md={3} lg={6}>{HornedBeast}</Row>
       </main>
     );
   }
