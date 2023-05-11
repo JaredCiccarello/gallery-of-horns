@@ -1,11 +1,8 @@
 /* This is used specifically for each individual image */
 
 .hornedbeast {
-  border: 1px solid grey;
-  width: 75%;
-  height: auto;
+  border: 1px solid coral;
   padding: 1rem;
-  margin: 1rem;
 }
 
 .hornedbeast img {
