@@ -8,36 +8,58 @@ import Main from './Main.js';
 import data from "./data.json";
 // We don't need to declare a variable. We don't have to use this anywhere so it automatically applies.
 import './App.css'
+import SelectedBeast from './SelectedBeast.js';
 
 class App extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       hearts: 0,
+      beastName: 'test',
+      clickedBeast: {},
+      displayModal: false
+      // beastName: ''
     }
+  };
+
+  addHearts = () => {
+    this.setState({
+      hearts: this.state.hearts + 1,
+    });
+  }
+  // We need to use setState because it is the top most element passing down.
+  handleCloseModal = () => {
+    this.setState({
+      displayModal: false
+      // personName: Name;
+    })
+  }
+  handleOpenModal = () => {
+    this.setState({
+      displayModal: true
+    })
   }
 
-addHearts = () => {
-  this.setState({
-    hearts: this.state.hearts + 1,
-  });
-}
-
-
   render() {
-
-
-
 
     return (
       // <> is called a frag or fractional element. We have to have this because react will only export jsx that is wrapped in one element.
       <>
-        <Header/>
-          <Main
+        <Header />
+        <Main
           addHearts={this.addHearts}
-          data={data}/>
-          <Footer/>
-      </>
+          data={data}
+          handleOpenModal={this.handleOpenModal}
+        />
+        <SelectedBeast
+          show={this.state.displayModal}
+          handleCloseModal={this.handleCloseModal}
+        />
+
+          <Footer>
+          &copy; 2023; Jared Ciccarello
+          </Footer>
+        </>
         );
   }
 };

@@ -3,6 +3,9 @@ import HornedBeastAnimal from './HornedBeast';
 import Row from 'react-bootstrap/Row';
 
 class Main extends React.Component {
+  constructor (props) {
+    super (props)
+  }
 
 
   render() {
@@ -25,6 +28,7 @@ class Main extends React.Component {
         // We add a key for the _id in data.json
         key={idx}
         addHearts={this.props.addHearts}
+        handleOpen={this.props.handleOpenModal}
       />);
   });
 

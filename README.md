@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+
+    Lab 3
 Number and name of feature: __________Feature #1: Display Images_____________
 
 Estimate of time needed to complete: 4 hours
@@ -32,6 +34,45 @@ Start time: 1230
 Finish time: 0100
 
 Actual time needed to complete: 30 minutes
+
+
+
+    Lab 2
+
+Number and name of feature: Feature 1: Display Images
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 0515
+
+Finish time: 0630
+
+Actual time needed to complete: 1 hour 15
+
+
+Number and name of feature: Feature #2: Allow Users to Favorite Individual Beasts
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 0630
+
+Finish time: 0800
+
+Actual time needed to complete: 1 hour 30
+
+
+Number and name of feature: Feature 3: Bootstrap
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 0800
+
+Finish time: 1000
+
+Actual time needed to complete: 2 hours
+
+
+
 
 
 
