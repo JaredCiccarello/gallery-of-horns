@@ -3,12 +3,16 @@
 import React from 'react';
 // We use ./ in order for the file to read properly. If the file was stored in another folder you would write ./folder/filename
 import Header from './Header.js';
-import Footer from './Footer.js';
 import Main from './Main.js';
+import Footer from './Footer.js';
 import data from "./data.json";
 // We don't need to declare a variable. We don't have to use this anywhere so it automatically applies.
 import './App.css'
 import SelectedBeast from './SelectedBeast.js';
+
+
+// We need to put beastinfo in state
+// -beastinfo the data about the beast that was clicked on
 
 // We have to have a boolean value for if the modal is displaying
 class App extends React.Component {
@@ -17,13 +21,15 @@ class App extends React.Component {
     this.state = {
       hearts: '',
       beastName: 'test',
-      pickedBeast: {},
+      selectedBeast: {},
       displayModal: false
-      // beastName: ''
     }
   };
 
   addHearts = () => {
+    // setState will only work inside the component that it is in
+    // if in App we call setState, that will change the state of App only
+    // this.setState is the way we change values in state
     this.setState({
       hearts: this.state.hearts + <span role="img" aria-label="blackHeart">'🖤'</span>,
     });

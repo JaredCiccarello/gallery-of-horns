@@ -7,11 +7,15 @@ import './HornedBeast.css'
 // import Button from 'react-bootstrap/Button';
 // import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
 
 
 
 // hornedBeast needs access to handleModal open
+
+// When we invoke handleModalOpen we need to send the beast information as an argument
+// We will need this.props.handleModalOpen(beastifno)
 
 class HornedBeast extends React.Component {
   // Starting with the constructor after creating a class, we can build state like this.
@@ -39,12 +43,32 @@ class HornedBeast extends React.Component {
       alt: this.props.alt,
       description: this.props.description,
       horns: this.props.horns
+
     }
   }
   
+//   render() {
+//     return (
+//       // <article className = "horned-beast" onClick={() => this.props.handleModal(this.getHornedBeast())}>
+//         <h2> {this.props.title}</h2>
+//         <p> {this.props.description}</p>
+//         <p> This thing has {this.props.horns} horn(s)!</p>
+//         <p> {this.state.likes} ♥️s:</p>
+//         <Button onClick={this.handleLikes}> handlikes </Button>
+//         <img 
+//         src={this.props.imageURL} 
+//         alt={this.alt}
+//         title={this.props.title} 
+//         />
+//         {/* <Button> Vote for this one! </Button> */}
+//       </article> 
+//     );
+//   }
+// }
 
   render() {
     return (
+      <>
       <Card 
       style={{width: "20rem"}}
       onClick={this.handleLikes}>
@@ -55,6 +79,7 @@ class HornedBeast extends React.Component {
           </Card.Title>
         </Card.Body>
       </Card>
+      </>
     )
   }
 };

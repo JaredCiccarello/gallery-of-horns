@@ -57,7 +57,9 @@ class Main extends React.Component {
       <main>
         <Form>
           <Form.Group>
-            <Form.Label>Number of Horns</Form.Label>
+            {/* These do the same thing */}
+            <Form.Label>Those are a lot of horns!</Form.Label>
+            {/* <label htmlFor="hornQuestion"> How Many Horns today? </label> */}
             <Form.Control as="select" onChange={this.filter}>
              <option value="">All</option>
              <option value="1">1</option>
@@ -67,6 +69,7 @@ class Main extends React.Component {
              </Form.Control>
           </Form.Group>
         </Form>
+        <button type="submit" onClick={this.handleSubmit}> Submit! </button>
         <Row xs={1} sm={2} md={3} lg={6}>{HornedBeast}
         </Row>
       </main>
