@@ -1,8 +1,42 @@
 # Getting Started with Create React App
 
+Number and name of feature: Rendering image on Modal
+
+Estimate of time needed to complete: 2 hours
+
+Start time: 0630
+
+Finish time: 0630
+
+Actual time needed to complete: 1 hour 30
+
+
+    Lab 4
+Number and name of feature: Feature 1. Filter by Numbers of Horns
+
+Estimate of time needed to complete: 2 hours
+
+Start time: 0500
+
+Finish time: 0630
+
+Actual time needed to complete: 1 hour 30
+
+
+Number and name of feature: Feature #2: Allow Users to Favorite Individual Beasts
+
+Estimate of time needed to complete: 3 hours
+
+Start time: 0100
+
+Finish time: 0215
+
+Actual time needed to complete: 1 hour 15
+
+
 
     Lab 3
-Number and name of feature: __________Feature #1: Display Images_____________
+Number and name of feature: Feature #1: Display Images
 
 Estimate of time needed to complete: 4 hours
 
@@ -10,7 +44,7 @@ Start time: 1730
 
 Finish time: 2130
 
-Actual time needed to complete: 4 hours (This is not a joke, I only just completed it when my instructor walked in on me and helped me fix a 🐞  in my code)
+Actual time needed to complete: 4 hours 
 
 
 Number and name of feature: Feature #2: Allow Users to Favorite Individual Beasts

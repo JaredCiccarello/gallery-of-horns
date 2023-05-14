@@ -1,14 +1,11 @@
-// App.js is a class so we capitalize the file name
+import React from "react";
+import Header from "./Header.js";
+import Main from "./Main.js";
+import Footer from "./Footer.js";
+import './App.css';
+import data from './data.json';
+import SelectedBeast from './SelectedBeast.js'
 
-import React from 'react';
-// We use ./ in order for the file to read properly. If the file was stored in another folder you would write ./folder/filename
-import Header from './Header.js';
-import Footer from './Footer.js';
-import Main from './Main.js';
-import data from "./data.json";
-// We don't need to declare a variable. We don't have to use this anywhere so it automatically applies.
-import './App.css'
-import SelectedBeast from './SelectedBeast.js';
 
 class App extends React.Component {
   constructor(props) {

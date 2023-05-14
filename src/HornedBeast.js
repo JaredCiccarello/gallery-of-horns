@@ -57,27 +57,3 @@ class HornedBeast extends React.Component {
 }
 
 export default HornedBeast;
-
-
-
-
-      // <Col className="mt-4">
-      //   <article className="hornedbeast h-100">
-      //     {/* Things that look like HTML like we have here are our JSX content */}
-      //     <h2>{this.props.title}</h2>
-      //     {/* p tag keeps track of how many times a beast has been liked. This needs to be listed right after the title or name of the beasts. */}
-      //     {/* this.state helps to note the particular number zero inside this.state above*/}
-      //     <p>{this.state.likes} likes</p>
-      //     {/* We will need this to invoke a function(handleLikes). This refers to HornedBeast. Specifically this particular instance of person. */}
-      //     <p onClick={this.handleLikes}>Click here to like!</p>
-      //     <img
-      //       src={this.props.image_url}
-      //       alt={this.props.alt}
-      //       title={this.props.title}
-      //     />
-      //     {/* We implement this in here like so once we have imported the bootstrap button code. */}
-      //     <Button variant="danger">Danger</Button>
-      //     <button>regular HTML button</button>
-      //     <p>{this.props.alt}</p>
-      //   </article>
-      // </Col>
