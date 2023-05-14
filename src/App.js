@@ -21,6 +21,7 @@ class App extends React.Component {
     this.state = {
       hearts: '',
       beastName: 'test',
+      // Ensure all names of selectedBeast are the same.
       selectedBeast: {},
       displayModal: false
     }
@@ -38,12 +39,11 @@ class App extends React.Component {
   // These handles are METHODS
   // We still need a click event which invokes these methods from hornedBeast.js
   // displayModal is the STATE
-  handleOpenModal = (SelectedBeast) => {
+  handleOpenModal = (selectedBeast) => {
     this.setState({
       displayModal: true,
-      SelectedBeast: SelectedBeast
+      selectedBeast: selectedBeast
     });
-    console.log('modal was clicked');
     
   }
   handleCloseModal = () => {
@@ -52,8 +52,9 @@ class App extends React.Component {
     })
   }
 
-  render() {
 
+  render() {
+    // console.log(this.state.selectedBeast)
     return (
       // <> is called a frag or fractional element. We have to have this because react will only export jsx that is wrapped in one element.
       <>
@@ -68,6 +69,7 @@ class App extends React.Component {
         <SelectedBeast
           show={this.state.displayModal}
           handleCloseModal={this.handleCloseModal}
+          popUpBeast={this.state.selectedBeast}
         />
 
           <Footer>

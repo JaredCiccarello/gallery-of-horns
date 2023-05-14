@@ -6,8 +6,9 @@ import Card from "react-bootstrap/Card"
 
 class SelectedBeast extends React.Component {
 
+  // Renamed values will be important to remember, follow the logical flow of data
     render() {
-        
+        console.log(this.props.popUpBeast)
         return (
             // Show is currently set to a boolean
             // handleClose is being triggered here and happening in the parent App.js
@@ -20,20 +21,20 @@ class SelectedBeast extends React.Component {
                     </Modal.Header>
                     <Modal.Body>
                         <Card>
-                            
                             <Card.Body>
                                 <Card.Title>
                                     This is the title
                                 </Card.Title>
                             </Card.Body>
                             <Card.Text>
-                                A pokemon!?
+                              {/* THIS WAS CHANGED */}
+                            <Card.Img src={this.props.popUpBeast.image_url}></Card.Img>
                             </Card.Text>
                         </Card>
                     </Modal.Body>
                     <Modal.Footer>
                         <Button onClick={this.props.handleCloseModal}>
-                            Climb a tree!
+                            {/* this.state.personName. Where would we find something similar? */}
                         </Button>
                     </Modal.Footer>
                 </Modal.Dialog>

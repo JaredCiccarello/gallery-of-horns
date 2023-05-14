@@ -36,35 +36,25 @@ class HornedBeast extends React.Component {
     // setState basically causes render to be invoked again
   }
   
+  // Ensure you're crediting where information stems from
   getHornedBeast = () => {
+    // let object = works similar to return.
     return {
       title: this.props.title,
-      imageURL: this.props.imageURL,
+      image_url: this.props.image_url,
       alt: this.props.alt,
       description: this.props.description,
       horns: this.props.horns
-
     }
+    // return object
   }
-  
-//   render() {
-//     return (
-//       // <article className = "horned-beast" onClick={() => this.props.handleModal(this.getHornedBeast())}>
-//         <h2> {this.props.title}</h2>
-//         <p> {this.props.description}</p>
-//         <p> This thing has {this.props.horns} horn(s)!</p>
-//         <p> {this.state.likes} ♥️s:</p>
-//         <Button onClick={this.handleLikes}> handlikes </Button>
-//         <img 
-//         src={this.props.imageURL} 
-//         alt={this.alt}
-//         title={this.props.title} 
-//         />
-//         {/* <Button> Vote for this one! </Button> */}
-//       </article> 
-//     );
-//   }
-// }
+  // THIS WAS CHANGED
+handleImageClick = () => {
+  // Passes object into function
+  // let beast = this.getHornedBeast()
+  this.props.handleOpen(this.getHornedBeast());
+}
+
 
   render() {
     return (
@@ -72,11 +62,15 @@ class HornedBeast extends React.Component {
       <Card 
       style={{width: "20rem"}}
       onClick={this.handleLikes}>
-        <Card.Img src={this.props.image_url} onClick={this.props.handleOpen}/>
+        {/* THIS WAS CHANGED */}
+        <Card.Img src={this.props.image_url} onClick={this.handleImageClick}/>
         <Card.Body>
           <Card.Title>
             {this.props.Title}
           </Card.Title>
+          {/* We need hearts added to this*/}
+          {/* THIS GOT CHANGED */}
+          <Card.Text >{this.state.likes}</Card.Text>
         </Card.Body>
       </Card>
       </>
