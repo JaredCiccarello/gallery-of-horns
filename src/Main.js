@@ -27,7 +27,7 @@ class Main extends React.Component {
 
     let hornedOne = this.state.filteredBeast.map((horn, idx) => {
 
-      return (<Col key={idx} className="mt-4">
+    return (<Col key={idx} className="mt-4">
         
         <HornedBeast
           imageURL={horn.image_url}
