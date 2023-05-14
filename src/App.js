@@ -10,13 +10,14 @@ import data from "./data.json";
 import './App.css'
 import SelectedBeast from './SelectedBeast.js';
 
+// We have to have a boolean value for if the modal is displaying
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hearts: 0,
+      hearts: '',
       beastName: 'test',
-      clickedBeast: {},
+      pickedBeast: {},
       displayModal: false
       // beastName: ''
     }
@@ -24,19 +25,24 @@ class App extends React.Component {
 
   addHearts = () => {
     this.setState({
-      hearts: this.state.hearts + 1,
+      hearts: this.state.hearts + <span role="img" aria-label="blackHeart">'🖤'</span>,
     });
   }
   // We need to use setState because it is the top most element passing down.
+  // These handles are METHODS
+  // We still need a click event which invokes these methods from hornedBeast.js
+  // displayModal is the STATE
+  handleOpenModal = (SelectedBeast) => {
+    this.setState({
+      displayModal: true,
+      SelectedBeast: SelectedBeast
+    });
+    console.log('modal was clicked');
+    
+  }
   handleCloseModal = () => {
     this.setState({
       displayModal: false
-      // personName: Name;
-    })
-  }
-  handleOpenModal = () => {
-    this.setState({
-      displayModal: true
     })
   }
 
@@ -45,7 +51,9 @@ class App extends React.Component {
     return (
       // <> is called a frag or fractional element. We have to have this because react will only export jsx that is wrapped in one element.
       <>
-        <Header />
+        <Header 
+          hearts={this.state.Hearts}
+        />
         <Main
           addHearts={this.addHearts}
           data={data}

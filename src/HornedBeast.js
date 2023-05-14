@@ -11,7 +11,7 @@ import Card from 'react-bootstrap/Card';
 
 
 
-
+// hornedBeast needs access to handleModal open
 
 class HornedBeast extends React.Component {
   // Starting with the constructor after creating a class, we can build state like this.
@@ -23,6 +23,7 @@ class HornedBeast extends React.Component {
   }
 
   
+  
   handleLikes = () => {
     //  increase the number of likes in the value in state
     this.setState({
@@ -30,7 +31,17 @@ class HornedBeast extends React.Component {
     })
     // setState basically causes render to be invoked again
   }
-
+  
+  getHornedBeast = () => {
+    return {
+      title: this.props.title,
+      imageURL: this.props.imageURL,
+      alt: this.props.alt,
+      description: this.props.description,
+      horns: this.props.horns
+    }
+  }
+  
 
   render() {
     return (
