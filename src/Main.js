@@ -1,45 +1,68 @@
-import React from 'react';
-import HornedBeastAnimal from './HornedBeast';
+import React from "react";
+import HornedBeast from './HornedBeast';
+import data from './data.json';
+import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import Form from 'react-bootstrap/Form';
 
 class Main extends React.Component {
   constructor (props) {
-    super (props)
+    super(props);
+    this.state = {
+      allBeast: data,
+      filteredBeast: data,
+    }
   }
 
+  filter = (event) => {
+    let numHorns = parseInt(event.target.value);
+    let everyBeast = this.state.allBeast;
+    if (numHorns) {
+      everyBeast = this.state.allBeast.filter(beast => beast.horns === numHorns);
+    }
+    this.setState({filteredBeast: everyBeast})
+  }
 
   render() {
 
+    let hornedOne = this.state.filteredBeast.map((horn, idx) => {
 
-  // We want each animal to be given a component in my HornedBeast array
-  // Each item in the array will be called beasts
-  // map acts as an array, pushing data through beasts, idx
-  let HornedBeast =  this.props.data.map((beasts, idx) => {
-
-      // key idx holds place
-      // Col md={4} key={idx}>
-
-
-    // We need return here because: the instance of 'HornedBeast' cannot return a value until we give it the command return
-      return ( <HornedBeastAnimal 
-        image_url={beasts.image_url}
-        title={beasts.title}
-        description={beasts.description}
-        // We add a key for the _id in data.json
-        key={idx}
-        addHearts={this.props.addHearts}
-        handleOpen={this.props.handleOpenModal}
-      />);
-  });
-
-
+      return (<Col key={idx} className="mt-4">
+        
+        <HornedBeast
+          imageURL={horn.image_url}
+          title={horn.title}
+          alt={horn.alt}
+          description={horn.description}
+          key={horn.keyword}
+          horns={horn.horns}
+          addHearts={this.props.addHearts}
+          handleShowModal={this.props.handleShowModal}
+          beast={horn}
+          />
+          </Col>)
+      });
 
     return (
-      // we sent 'data' array using props into main
       <main>
-        <Row xs={1} sm={2} md={3} lg={6}>{HornedBeast}</Row>
+        <Form>
+          <Form.Group>
+            <Form.Label>Horned Picker</Form.Label>
+              <Form.Control as="select" onChange={this.filter}>
+                <option value="">All</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="100">100</option>
+              </Form.Control>
+          </Form.Group>
+        </Form>
+        <Row xs={1} sm={2} md={3} lg={4}>
+        {hornedOne}
+        </Row>
       </main>
     );
   }
 }
+
 export default Main;

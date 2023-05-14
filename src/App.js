@@ -14,58 +14,59 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hearts: 0,
+      hearts: '',
+      isModalDisplaying: false,
       beastName: 'test',
-      clickedBeast: {},
-      displayModal: false
-      // beastName: ''
+      SelectedBeast: {}
     }
-  };
-
+  }
   addHearts = () => {
     this.setState({
-      hearts: this.state.hearts + 1,
+      hearts: this.state.hearts + <span role="img" aria-label="blackHeart">'🖤'</span>
     });
   }
-  // We need to use setState because it is the top most element passing down.
+  handleShowModal = (SelectedBeast) => {
+    // SetState will only work inside the component that it is in
+    // if in App.js we call setState, that will change the state of App only
+    // this.setState is the way we change values in state
+    this.setState({
+      isModalDisplaying: true,
+      SelectedBeast: SelectedBeast
+    });
+    console.log('modal was clicked');
+
+  }
+
   handleCloseModal = () => {
     this.setState({
-      displayModal: false
-      // personName: Name;
-    })
-  }
-  handleOpenModal = () => {
-    this.setState({
-      displayModal: true
+      isModalDisplaying: false
     })
   }
 
   render() {
-
     return (
-      // <> is called a frag or fractional element. We have to have this because react will only export jsx that is wrapped in one element.
       <>
-        <Header />
+        <Header
+          hearts={this.state.hearts}
+        />
         <Main
+        // addHearts, data and handleShowModal can ONLY be accessed inside Main using this.props (ex: this.props.handleShowModal)
           addHearts={this.addHearts}
           data={data}
-          handleOpenModal={this.handleOpenModal}
+          handleShowModal={this.handleShowModal}
         />
+        <Footer />
         <SelectedBeast
-          show={this.state.displayModal}
-          handleCloseModal={this.handleCloseModal}
+          show={this.state.isModalDisplaying}
+          onHide={this.handleCloseModal}
+          SelectedBeast={this.state.SelectedBeast}
         />
-
-          <Footer>
-          &copy; 2023; Jared Ciccarello
-          </Footer>
-        </>
-        );
+      </>
+    )
   }
 };
 
-        export default App;
-
+export default App;
 
 
 
